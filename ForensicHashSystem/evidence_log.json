@@ -34,5 +34,23 @@
         "timestamp": "2026-02-02 22:50:56",
         "previous_hash": "49b8d90d08919a6183f4ca3d7a195aa61431b6312bca9020eeba27e64aa16170",
         "hash": "389645e4d5e7112f5c85ab302b21d1d5e737cc4c214dc210853ab80053204531"
+    },
+    {
+        "file_name": "_I'm just a little boy from Bradford and now I'm smashing it_ _ @emrosefeld _.jpg",
+        "file_size": 57337,
+        "camera_id": "21312312",
+        "event_type": "CREATE",
+        "timestamp": "2026-02-08 17:36:59",
+        "previous_hash": "389645e4d5e7112f5c85ab302b21d1d5e737cc4c214dc210853ab80053204531",
+        "hash": "8895e75dc7c829ffd9004a7d5acda8ad8b00515e511ab662f75c0f5658d7ba79"
+    },
+    {
+        "file_name": "_I'm just a little boy from Bradford and now I'm smashing it_ _ @emrosefeld _.jpg",
+        "file_size": 57337,
+        "camera_id": "21312312",
+        "event_type": "MODIFY",
+        "timestamp": "2026-02-08 17:37:03",
+        "previous_hash": "8895e75dc7c829ffd9004a7d5acda8ad8b00515e511ab662f75c0f5658d7ba79",
+        "hash": "6328956cb2e82fd93af6e447571c37f92f68a5e2c881850cb21d6cae09296e38"
     }
 ]

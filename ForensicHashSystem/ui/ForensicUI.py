@@ -145,7 +145,8 @@ class ForensicUI:
         meta_container.pack(side="right", fill="y")
 
         ttk.Label(meta_container, text="Camera ID:").pack(anchor="w")
-        self.camera_entry = ttk.Entry(meta_container, width=25)
+        self.camera_id_var = tk.StringVar(value="Auto-generated")
+        self.camera_entry = ttk.Entry(meta_container, width=25, textvariable=self.camera_id_var, state="readonly")
         self.camera_entry.pack(pady=6)
 
         # Action Buttons
@@ -243,20 +244,19 @@ class ForensicUI:
         if not self.file_path.get():
             messagebox.showerror("Missing File", "Please select an evidence file.")
             return
-
-        camera_id = self.camera_entry.get().strip()
-        if not camera_id:
-            messagebox.showerror("Missing Camera ID", "Camera ID is required.")
-            return
-
-        hash_value, context = ForensicHasher.generate_hash(
+        
+        # Camera ID will be auto-generated
+        hash_value, context, camera_id = ForensicHasher.generate_hash(
             self.file_path.get(),
-            camera_id
+            camera_id=None
         )
         EvidenceLog.save_entry(context, hash_value)
+        
+        # Update UI to show generated camera ID
+        self.camera_id_var.set(camera_id)
 
         self.result_label.config(
-            text="✔ Evidence acquired and securely logged.",
+            text=f"✔ Evidence acquired and securely logged. Camera ID: {camera_id}",
             foreground="green"
         )
         self.status_text.set("Evidence acquisition successful.")
@@ -266,9 +266,14 @@ class ForensicUI:
             messagebox.showerror("Missing File", "Please select an evidence file.")
             return
 
-        is_valid, message = ForensicVerifier.verify(
+        # Get camera ID from UI (could be auto-generated from previous acquisition)
+        camera_id = self.camera_id_var.get()
+        if camera_id == "Auto-generated":
+            camera_id = None
+        
+        is_valid, message, evidence_uuid = ForensicVerifier.verify(
             self.file_path.get(),
-            self.camera_entry.get().strip()
+            camera_id
         )
 
         if is_valid:
