@@ -19,7 +19,32 @@ The main goals of CCTV - DF Layer are to:
 - Structured project architecture for easy expansion and experimentation
 - User-friendly interface designed for targeted users
 
-## 📚 Educational Context
+## � Key Features
+
+### Automated Monitoring
+- ✅ 24/7 directory watching
+- ✅ Auto-hash new files
+- ✅ Track all file events
+- ✅ Real-time alerts
+
+### Hash Chaining
+- ✅ Blockchain-like structure
+- ✅ Immutable evidence chain
+- ✅ Deletion detection
+- ✅ Sequence integrity
+
+### Alert System
+- 🔴 **CRITICAL** - Integrity failures
+- ⚠️ **WARNING** - Modifications, deletions
+- ℹ️ **INFO** - System events
+
+### Forensic Reports
+- ✅ CSV export
+- ✅ Text reports
+- ✅ Chain verification
+- ✅ Legal documentation
+
+## �📚 Educational Context
 This project is a collaborative effort to learn and demonstrate digital forensics techniques in a controlled, academic environment. It is **not intended for commercial or real-world legal use**.  
 This project is also a **continuous work in progress**, with improvements and new features planned as part of the learning process.
 

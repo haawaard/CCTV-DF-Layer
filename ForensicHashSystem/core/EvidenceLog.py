@@ -37,6 +37,15 @@ class EvidenceLog:
         return None
     
     @classmethod
+    def find_entry_by_filename(cls, file_name):
+        """Find the most recent entry for a given filename (regardless of camera_id)"""
+        log = cls.load_log()
+        for entry in reversed(log):
+            if entry["file_name"] == file_name:
+                return entry
+        return None
+    
+    @classmethod
     def generate_camera_id(cls):
         """Generate auto-incremented camera ID in format CAM-XXXX"""
         if not os.path.exists(cls.CAMERA_COUNTER_FILE):

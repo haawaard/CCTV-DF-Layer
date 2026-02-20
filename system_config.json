@@ -1,0 +1,17 @@
+{
+    "monitored_directory": "C:/Users/howar/Downloads/testVideo",
+    "auto_hash_enabled": true,
+    "alert_enabled": true,
+    "file_extensions": [
+        ".mp4",
+        ".avi",
+        ".mkv",
+        ".mov",
+        ".jpg",
+        ".jpeg",
+        ".png"
+    ],
+    "max_alerts": 1000,
+    "system_name": "CCTV-DF Layer v1.0",
+    "framework": "NIST SP 800-86"
+}
